@@ -63,39 +63,9 @@ namespace Stock_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _489_4893623_warehouse_icon_png_blue_warehouse_icon_png_transparent {
-            get {
-                object obj = ResourceManager.GetObject("489-4893623_warehouse-icon-png-blue-warehouse-icon-png-transparent", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _489_4893623_warehouse_icon_png_blue_warehouse_icon_png_transparent1 {
-            get {
-                object obj = ResourceManager.GetObject("489-4893623_warehouse-icon-png-blue-warehouse-icon-png-transparent1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _7656428_removebg_preview {
-            get {
-                object obj = ResourceManager.GetObject("7656428-removebg-preview", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap data_warehouse_5 {
             get {
-                object obj = ResourceManager.GetObject("data-warehouse-5", resourceCulture);
+                object obj = ResourceManager.GetObject("data_warehouse_5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
