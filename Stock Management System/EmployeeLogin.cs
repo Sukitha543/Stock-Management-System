@@ -10,29 +10,26 @@ using System.Windows.Forms;
 
 namespace Stock_Management_System
 {
-    public partial class userMode : Form
+    public partial class EmployeeLogin : Form
     {
-        public userMode()
+        public EmployeeLogin()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void NewAccountBtn_Click(object sender, EventArgs e)
         {
-            AdminLogin adminLogin = new AdminLogin();
-            adminLogin.Show();
+
+            EmployeeRegister employeeRegister = new EmployeeRegister();
+            employeeRegister.Show();
             this.Hide();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void BackBtn_Click(object sender, EventArgs e)
         {
-            EmployeeLogin employeelogin = new EmployeeLogin();
-            employeelogin.Show();
+            userMode usermode = new userMode();
+            usermode.Show();
             this.Hide();
         }
-
-
     }
-
-
 }
