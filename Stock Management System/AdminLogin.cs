@@ -38,6 +38,42 @@ namespace Stock_Management_System
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string username = UserName.Text.Trim();
+                string password = Pwd.Text.Trim();
+
+                // Validate empty fields
+                if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+                {
+                    MessageBox.Show("Username and Password cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    AdminManager adminLogin = new AdminManager(username, password);
+                    adminLogin.login(username, password);
+
+                    AdminDashboard dashboard = new AdminDashboard();
+                    dashboard.Show();
+                    this.Hide();
+                }
+
+                   
+            }
+            catch (Exception ex)
+            {
+                // Display any login errors
+                 MessageBox.Show($"{ex.Message}", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // Clear input fields
+                UserName.Text = string.Empty;
+                Pwd.Text = string.Empty;
+            }
+
+
+
 
         }
     }

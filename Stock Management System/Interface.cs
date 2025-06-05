@@ -9,7 +9,8 @@ namespace Stock_Management_System
     internal interface Interface
     {
         void create(string username, string id, string password);
-        void login();
+        void login(string username,string password);
 
+        
     }
 }

@@ -31,5 +31,10 @@ namespace Stock_Management_System
             usermode.Show();
             this.Hide();
         }
+
+        private void EmployeeLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

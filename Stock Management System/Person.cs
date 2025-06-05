@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace Stock_Management_System
 {
     internal abstract class Person:Interface
-    {
+    {   
+        //Account creation and login credentials
         private string username;
         private string id;
         private string password;
@@ -36,8 +37,14 @@ namespace Stock_Management_System
             this.password = password;
         }
 
+        public Person(string username,string password) 
+        {
+            this.username = username;
+            this.password=password;
+        }
+
         public abstract void create(string username, string id, string password);
-        public abstract void login();
+        public abstract void login(string username,string password);
 
     }
 

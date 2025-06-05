@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -43,22 +44,40 @@ namespace Stock_Management_System
                 string id = AdminId.Text;
                 string password = Pwd.Text;
                 string confirmPassword = ConfirmPwd.Text;
-
+               
+                AdminManager adminRegister = new AdminManager(username, id, password);
                 if (password != confirmPassword)
                 {
-                    throw new Exception("Password and Confirm Password do not match.");
+                    MessageBox.Show("password and confirm password does not match","Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
+                else
+                {
+                    // Call the create method with parameters
+                    adminRegister.create(username, id,password);
 
-                // Create AdminManager instance
-                AdminManager adminManager = new AdminManager(username, id, password);
-
-                // Call the create method with parameters
-                adminManager.create(username, id, password);
+                }
             }
-            catch (Exception ex)
+            catch(Exception ex)  
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                MessageBox.Show($"{ex.Message}", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            finally 
+            {
+                UserName.Text = string.Empty; 
+                AdminId.Text = string.Empty;
+                Pwd.Text = string.Empty; 
+                ConfirmPwd.Text = string.Empty;
+            }
+            
         }
+
+            
+
+    
+
+
     }
 }
+
+
