@@ -15,16 +15,16 @@ namespace Stock_Management_System
         private string connectionString = "server=localhost;database=stock_management;uid=root;";
 
 
-       public AdminManager(string username, string id, string password) : base(username, id, password)
+        public AdminManager(string username, string id, string password) : base(username, id, password)
         {
         }
 
-        public AdminManager(string username,string password) : base(username, password) 
-        { 
+        public AdminManager(string username, string password) : base(username, password)
+        {
         }
 
-        
-        public override void create(string username,string id,string password)
+
+        public override void create(string username, string id, string password)
         {
             try
             {
@@ -64,7 +64,8 @@ namespace Stock_Management_System
 
                     insertCmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Admin account created successfully.","Account Creation Successful",MessageBoxButtons.OK);
+
+                    MessageBox.Show("Admin account created successfully.", "Account Creation Successful", MessageBoxButtons.OK);
                 }
             }
             catch (Exception ex)
@@ -73,7 +74,7 @@ namespace Stock_Management_System
                 throw new Exception(ex.Message);
             }
 
-        
+
 
         }
 
@@ -109,10 +110,16 @@ namespace Stock_Management_System
             {
                 // Rethrow the exception to handle it in the caller
                 throw new Exception(ex.Message);
-              
+
 
             }
         }
+
+        public void addEmployees()
+        {
+
         }
+
     }
+}
 
