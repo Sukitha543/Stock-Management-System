@@ -138,6 +138,7 @@
     <Compile Include="AdminRegister.Designer.cs">
       <DependentUpon>AdminRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="Employee.cs" />
     <Compile Include="EmployeeLogin.cs">
       <SubType>Form</SubType>
     </Compile>
