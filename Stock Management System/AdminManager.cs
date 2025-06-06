@@ -12,8 +12,6 @@ namespace Stock_Management_System
 {
     internal class AdminManager : Person, Interface
     {
-        private string connectionString = "server=localhost;database=stock_management;uid=root;";
-
 
         public AdminManager(string username, string id, string password) : base(username, id, password)
         {
@@ -29,7 +27,7 @@ namespace Stock_Management_System
             try
             {
                 // Connect to the database
-                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                using (MySqlConnection conn = new MySqlConnection(DatabaseHelper.GetConnectionString()))
                 {
                     conn.Open();
 
@@ -82,7 +80,7 @@ namespace Stock_Management_System
         {
             try
             {
-                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                using (MySqlConnection conn = new MySqlConnection(DatabaseHelper.GetConnectionString()))
                 {
                     conn.Open();
 
