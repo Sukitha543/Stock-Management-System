@@ -63,6 +63,16 @@ namespace Stock_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _6823086 {
+            get {
+                object obj = ResourceManager.GetObject("6823086", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap data_warehouse_5 {
             get {
                 object obj = ResourceManager.GetObject("data_warehouse_5", resourceCulture);
@@ -76,6 +86,17 @@ namespace Stock_Management_System.Properties {
         internal static System.Drawing.Bitmap people_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("people-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap roup_of_people_in_a_formation_free_icon_svg_psd_png_employee_engagement_stats_11563001272via6lcn5i3 {
+            get {
+                object obj = ResourceManager.GetObject("roup-of-people-in-a-formation-free-icon-svg-psd-png-employee-engagement-stats-115" +
+                        "63001272via6lcn5i3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

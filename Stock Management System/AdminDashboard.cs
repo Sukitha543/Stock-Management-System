@@ -16,5 +16,28 @@ namespace Stock_Management_System
         {
             InitializeComponent();
         }
+
+        private void AddEmployeesBtn_Click(object sender, EventArgs e)
+        {
+            AddEmployees addEmployees = new AddEmployees();
+            addEmployees.Show();
+            
+        }
+
+
+        private void LogOutBtn_Click_1(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you want to log out", "Log Out", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                userMode userMode = new userMode();
+                userMode.Show();
+                this.Hide();
+            }
+            else
+            {
+                this.Show();
+            }
+        }
     }
 }
