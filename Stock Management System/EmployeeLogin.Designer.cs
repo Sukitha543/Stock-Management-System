@@ -159,6 +159,7 @@
             this.LoginBtn.TabIndex = 8;
             this.LoginBtn.Text = "Login";
             this.LoginBtn.UseVisualStyleBackColor = false;
+            this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
             // Pwd
             // 

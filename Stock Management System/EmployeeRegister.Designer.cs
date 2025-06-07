@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BackBtn = new System.Windows.Forms.Button();
             this.RegisterBtn = new System.Windows.Forms.Button();
@@ -40,7 +41,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -55,6 +55,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(322, 552);
             this.panel1.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(118, 347);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(62, 30);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Staff";
             // 
             // pictureBox1
             // 
@@ -90,6 +100,7 @@
             this.RegisterBtn.TabIndex = 19;
             this.RegisterBtn.Text = "Register";
             this.RegisterBtn.UseVisualStyleBackColor = false;
+            this.RegisterBtn.Click += new System.EventHandler(this.RegisterBtn_Click);
             // 
             // ConfirmPwd
             // 
@@ -172,16 +183,6 @@
             this.label1.Size = new System.Drawing.Size(108, 27);
             this.label1.TabIndex = 11;
             this.label1.Text = "Username";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(118, 347);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 30);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Staff";
             // 
             // EmployeeRegister
             // 

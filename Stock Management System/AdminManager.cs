@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Drawing;
 
 namespace Stock_Management_System
 {
@@ -19,6 +20,11 @@ namespace Stock_Management_System
 
         public AdminManager(string username, string password) : base(username, password)
         {
+        }
+
+        public AdminManager() : base() 
+        {
+
         }
 
 
@@ -50,7 +56,7 @@ namespace Stock_Management_System
                     int accountExists = Convert.ToInt32(checkCmd.ExecuteScalar());
                     if (accountExists > 0)
                     {
-                        throw new Exception($"An account already exists for {Id}");
+                        throw new Exception($"An account already exists for{Id} ");
                     }
 
                     // Insert admin credentials into admin_accounts table
@@ -64,6 +70,7 @@ namespace Stock_Management_System
 
 
                     MessageBox.Show("Admin account created successfully.", "Account Creation Successful", MessageBoxButtons.OK);
+                   
                 }
             }
             catch (Exception ex)
@@ -113,11 +120,65 @@ namespace Stock_Management_System
             }
         }
 
-        public void addEmployees()
-        {
 
+        public void addEmployees(Employee emp)
+        {
+            using (MySqlConnection conn = new MySqlConnection(DatabaseHelper.GetConnectionString()))
+            {
+                conn.Open();
+
+                // Add employee details
+                string insertQuery = "INSERT INTO employee_details (employee_id, firstname, lastname, contact_number, email, address) VALUES (@id, @firstname, @lastname, @contact, @email, @address)";
+                MySqlCommand insertCmd = new MySqlCommand(insertQuery, conn);
+                insertCmd.Parameters.AddWithValue("@id", emp.Id);
+                insertCmd.Parameters.AddWithValue("@firstname", emp.FirstName);
+                insertCmd.Parameters.AddWithValue("@lastname", emp.LastName);
+                insertCmd.Parameters.AddWithValue("@contact", emp.ContactNo);
+                insertCmd.Parameters.AddWithValue("@email", emp.Email);
+                insertCmd.Parameters.AddWithValue("@address", emp.Address);
+
+                insertCmd.ExecuteNonQuery();
+
+                MessageBox.Show($"The employee with the ID {emp.Id} was added successfully.", "Employee Added", MessageBoxButtons.OK);
+            }
         }
 
+
+
+        public static string GetNextEmployeeId()
+        {
+            string nextID = " ";
+            
+            using (MySqlConnection conn = new MySqlConnection(DatabaseHelper.GetConnectionString()))
+            {
+                conn.Open();
+
+                // Query to get the last employeeID ordered descending
+                string query = "SELECT employee_id FROM employee_details ORDER BY employee_id DESC LIMIT 1";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                object result = cmd.ExecuteScalar();
+
+                if (result != null)
+                {
+                    string lastID = result.ToString();  // e.g. "E005"
+
+                    // Extract number part from the string (remove the "E")
+                    int numericPart = int.Parse(lastID.Substring(1));
+
+                    // Increment number
+                    int newNumericPart = numericPart + 1;
+
+                    // Format the new ID with leading zeros (E.g. E006)
+                    nextID = "E" + newNumericPart.ToString("D3");
+                }
+                else
+                {
+                    // If no records found, start from E001
+                    nextID = "E001";
+                }
+            }
+            return nextID;
+        }
     }
 }
 

@@ -23,5 +23,39 @@ namespace Stock_Management_System
             employeeLogin.Show();
             this.Hide();
         }
+
+        private void RegisterBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string username = UserName.Text;
+                string id = AdminId.Text;
+                string password = Pwd.Text;
+                string confirmPassword = ConfirmPwd.Text;
+
+                EmployeeManager employeeRegister = new EmployeeManager(username, id, password);
+                if (password != confirmPassword)
+                {
+                    MessageBox.Show("password and confirm password does not match", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Pwd.Text = string.Empty;
+                    ConfirmPwd.Text = string.Empty;
+
+                }
+                else
+                {
+                    // Call the create method with parameters
+                    employeeRegister.create(username, id, password);
+                    this.Close();
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex.Message}", "Account Creation Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+
+            }
+        }
     }
 }

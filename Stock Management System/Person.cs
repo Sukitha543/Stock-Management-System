@@ -9,9 +9,9 @@ namespace Stock_Management_System
     internal abstract class Person:Interface
     {   
         //Account creation and login credentials
-        private string username;
-        private string id;
-        private string password;
+        protected string username;
+        protected string id;
+        protected string password;
 
         public string Username {
             get { return username;} 
@@ -30,6 +30,11 @@ namespace Stock_Management_System
             set { password = value; }
         }
 
+       public Person()
+        {
+
+        }
+
         public Person(string username,string id,string password) 
         {
             this.username = username;
@@ -45,6 +50,8 @@ namespace Stock_Management_System
 
         public abstract void create(string username, string id, string password);
         public abstract void login(string username,string password);
+
+       
 
     }
 

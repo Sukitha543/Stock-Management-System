@@ -49,26 +49,30 @@ namespace Stock_Management_System
                 if (password != confirmPassword)
                 {
                     MessageBox.Show("password and confirm password does not match","Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Pwd.Text = string.Empty;
+                    ConfirmPwd.Text = string.Empty;
 
                 }
                 else
                 {
                     // Call the create method with parameters
                     adminRegister.create(username, id,password);
+                    
+                    UserName.Text = string.Empty;
+                    AdminId.Text = string.Empty;
+                    Pwd.Text = string.Empty;
+                    ConfirmPwd.Text = string.Empty;
+                    this.Close();
+
 
                 }
             }
             catch(Exception ex)  
             {
-                MessageBox.Show($"{ex.Message}", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally 
-            {
-                UserName.Text = string.Empty; 
+                MessageBox.Show($"{ex.Message}", "Account Creation Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 AdminId.Text = string.Empty;
-                Pwd.Text = string.Empty; 
-                ConfirmPwd.Text = string.Empty;
             }
+            
             
         }
 

@@ -10,7 +10,8 @@ namespace Stock_Management_System
     {
         void create(string username, string id, string password);
         void login(string username,string password);
-
         
+
+
     }
 }
