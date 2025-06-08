@@ -62,7 +62,7 @@ namespace Stock_Management_System
                     AdminId.Text = string.Empty;
                     Pwd.Text = string.Empty;
                     ConfirmPwd.Text = string.Empty;
-                    this.Close();
+                    this.Hide();
 
 
                 }

@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Drawing;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Stock_Management_System
 {
@@ -22,7 +23,7 @@ namespace Stock_Management_System
         {
         }
 
-        public AdminManager() : base() 
+        public AdminManager() : base()
         {
 
         }
@@ -70,7 +71,7 @@ namespace Stock_Management_System
 
 
                     MessageBox.Show("Admin account created successfully.", "Account Creation Successful", MessageBoxButtons.OK);
-                   
+
                 }
             }
             catch (Exception ex)
@@ -148,7 +149,7 @@ namespace Stock_Management_System
         public static string GetNextEmployeeId()
         {
             string nextID = " ";
-            
+
             using (MySqlConnection conn = new MySqlConnection(DatabaseHelper.GetConnectionString()))
             {
                 conn.Open();
@@ -179,6 +180,41 @@ namespace Stock_Management_System
             }
             return nextID;
         }
+
+        public override void delete(string id)
+        {
+            using (MySqlConnection conn = new MySqlConnection(DatabaseHelper.GetConnectionString()))
+            {
+                try
+                {
+                    conn.Open();
+
+                    // Check if the employee exists
+                    string checkQuery = "SELECT COUNT(*) FROM employee_details WHERE employee_id = @Id";
+                    MySqlCommand checkCmd = new MySqlCommand(checkQuery, conn);
+                    checkCmd.Parameters.AddWithValue("@Id", id);
+                    int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+                    if (count == 0)
+                    {
+                        throw new Exception("Employee ID not found.");
+                    }
+
+                    // Delete the employee (associated records in employee_accounts will be deleted automatically)
+                    string deleteQuery = "DELETE FROM employee_details WHERE employee_id = @Id";
+                    MySqlCommand deleteCmd = new MySqlCommand(deleteQuery, conn);
+                    deleteCmd.Parameters.AddWithValue("@Id", id);
+                    deleteCmd.ExecuteNonQuery();
+                    MessageBox.Show($"Employee with ID {id} has been deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+            }
+        }
     }
 }
+
 

@@ -45,7 +45,7 @@ namespace Stock_Management_System
                 {
                     // Call the create method with parameters
                     employeeRegister.create(username, id, password);
-                    this.Close();
+                    this.Hide();
 
 
                 }
@@ -53,9 +53,14 @@ namespace Stock_Management_System
             catch (Exception ex)
             {
                 MessageBox.Show($"{ex.Message}", "Account Creation Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
+                this.Hide();
 
             }
+        }
+
+        private void EmployeeRegister_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

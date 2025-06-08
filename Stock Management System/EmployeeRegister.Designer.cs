@@ -203,6 +203,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EmployeeRegister";
             this.Text = "EmployeeRegister";
+            this.Load += new System.EventHandler(this.EmployeeRegister_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -150,6 +150,7 @@ namespace Stock_Management_System
             this.RemoveEmployeesBtn.TabIndex = 10;
             this.RemoveEmployeesBtn.Text = "Remove Employees";
             this.RemoveEmployeesBtn.UseVisualStyleBackColor = false;
+            this.RemoveEmployeesBtn.Click += new System.EventHandler(this.RemoveEmployeesBtn_Click);
             // 
             // ViewEmployeesBtn
             // 

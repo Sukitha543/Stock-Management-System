@@ -50,7 +50,7 @@ namespace Stock_Management_System
 
         public abstract void create(string username, string id, string password);
         public abstract void login(string username,string password);
-
+        public abstract void delete(string id);
        
 
     }

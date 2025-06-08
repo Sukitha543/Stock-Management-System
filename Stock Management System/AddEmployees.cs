@@ -69,5 +69,10 @@ namespace Stock_Management_System
             }
 
         }
+
+        private void AddEmployees_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

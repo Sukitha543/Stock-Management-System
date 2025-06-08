@@ -62,7 +62,8 @@ namespace Stock_Management_System
             this.address = address;
            
         }
-
+        
+        
         
     }
 }
