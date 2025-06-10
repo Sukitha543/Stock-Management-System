@@ -83,6 +83,7 @@
             // Address
             // 
             this.Address.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Address.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Address.Location = new System.Drawing.Point(239, 251);
             this.Address.Multiline = true;
             this.Address.Name = "Address";
@@ -92,6 +93,7 @@
             // Email
             // 
             this.Email.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Email.Location = new System.Drawing.Point(239, 198);
             this.Email.Multiline = true;
             this.Email.Name = "Email";
@@ -101,6 +103,7 @@
             // ContactNumber
             // 
             this.ContactNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ContactNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ContactNumber.Location = new System.Drawing.Point(239, 140);
             this.ContactNumber.Multiline = true;
             this.ContactNumber.Name = "ContactNumber";
@@ -110,6 +113,7 @@
             // LastName
             // 
             this.LastName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LastName.Location = new System.Drawing.Point(239, 81);
             this.LastName.Multiline = true;
             this.LastName.Name = "LastName";
@@ -119,6 +123,7 @@
             // FirstName
             // 
             this.FirstName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FirstName.Location = new System.Drawing.Point(239, 27);
             this.FirstName.Multiline = true;
             this.FirstName.Name = "FirstName";

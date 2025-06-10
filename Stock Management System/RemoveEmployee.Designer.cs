@@ -68,6 +68,7 @@
             // EmployeeID
             // 
             this.EmployeeID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.EmployeeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmployeeID.Location = new System.Drawing.Point(128, 206);
             this.EmployeeID.Multiline = true;
             this.EmployeeID.Name = "EmployeeID";

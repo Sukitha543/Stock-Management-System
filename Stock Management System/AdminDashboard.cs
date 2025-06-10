@@ -45,5 +45,17 @@ namespace Stock_Management_System
             RemoveEmployee removeEmployee = new RemoveEmployee();
             removeEmployee.Show();
         }
+
+        private void EmployeeDetailsBtn_Click(object sender, EventArgs e)
+        {
+            EditEmployee edit = new EditEmployee();
+            edit.Show();
+        }
+
+        private void ViewEmployeesBtn_Click(object sender, EventArgs e)
+        {
+            ViewEmployees view = new ViewEmployees();
+            view.Show();
+        }
     }
 }

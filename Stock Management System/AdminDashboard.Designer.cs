@@ -41,6 +41,7 @@ namespace Stock_Management_System
             this.RemoveEmployeesBtn = new System.Windows.Forms.Button();
             this.ViewEmployeesBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.EmployeeDetailsBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -130,7 +131,7 @@ namespace Stock_Management_System
             this.AddEmployeesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddEmployeesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddEmployeesBtn.ForeColor = System.Drawing.Color.White;
-            this.AddEmployeesBtn.Location = new System.Drawing.Point(388, 95);
+            this.AddEmployeesBtn.Location = new System.Drawing.Point(388, 113);
             this.AddEmployeesBtn.Name = "AddEmployeesBtn";
             this.AddEmployeesBtn.Size = new System.Drawing.Size(271, 72);
             this.AddEmployeesBtn.TabIndex = 9;
@@ -158,12 +159,13 @@ namespace Stock_Management_System
             this.ViewEmployeesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ViewEmployeesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ViewEmployeesBtn.ForeColor = System.Drawing.Color.White;
-            this.ViewEmployeesBtn.Location = new System.Drawing.Point(388, 280);
+            this.ViewEmployeesBtn.Location = new System.Drawing.Point(388, 347);
             this.ViewEmployeesBtn.Name = "ViewEmployeesBtn";
             this.ViewEmployeesBtn.Size = new System.Drawing.Size(271, 74);
             this.ViewEmployeesBtn.TabIndex = 11;
             this.ViewEmployeesBtn.Text = "View Employees";
             this.ViewEmployeesBtn.UseVisualStyleBackColor = false;
+            this.ViewEmployeesBtn.Click += new System.EventHandler(this.ViewEmployeesBtn_Click);
             // 
             // label2
             // 
@@ -175,11 +177,26 @@ namespace Stock_Management_System
             this.label2.TabIndex = 12;
             this.label2.Text = "All Rights Reserved";
             // 
+            // EmployeeDetailsBtn
+            // 
+            this.EmployeeDetailsBtn.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.EmployeeDetailsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EmployeeDetailsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmployeeDetailsBtn.ForeColor = System.Drawing.Color.White;
+            this.EmployeeDetailsBtn.Location = new System.Drawing.Point(388, 267);
+            this.EmployeeDetailsBtn.Name = "EmployeeDetailsBtn";
+            this.EmployeeDetailsBtn.Size = new System.Drawing.Size(271, 74);
+            this.EmployeeDetailsBtn.TabIndex = 13;
+            this.EmployeeDetailsBtn.Text = "Edit Employee Details";
+            this.EmployeeDetailsBtn.UseVisualStyleBackColor = false;
+            this.EmployeeDetailsBtn.Click += new System.EventHandler(this.EmployeeDetailsBtn_Click);
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(739, 531);
+            this.Controls.Add(this.EmployeeDetailsBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ViewEmployeesBtn);
             this.Controls.Add(this.RemoveEmployeesBtn);
@@ -215,5 +232,6 @@ namespace Stock_Management_System
         private System.Windows.Forms.Button ViewEmployeesBtn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button LogOutBtn;
+        private System.Windows.Forms.Button EmployeeDetailsBtn;
     }
 }

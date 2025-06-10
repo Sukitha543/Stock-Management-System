@@ -15,7 +15,7 @@ namespace Stock_Management_System
         private int contactNo;
         private string email;
         private string address;
-    
+        private string currentEmployeeId;
 
         public string Id
         {
@@ -52,6 +52,11 @@ namespace Stock_Management_System
             set { address = value; }
         }
 
+        public string CurrentEmployeeId
+        {
+            get { return currentEmployeeId; }
+            set { currentEmployeeId = value; }
+        }
         public Employee(string id,string firstName, string lastName, int contactNo, string email, string address)
         {
             this.id = id;

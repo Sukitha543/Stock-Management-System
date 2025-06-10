@@ -214,7 +214,71 @@ namespace Stock_Management_System
                 }
             }
         }
+
+        public Employee GetEmployeeDetailsById(string id)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(DatabaseHelper.GetConnectionString()))
+                {
+                    conn.Open();
+
+                    string query = "SELECT * FROM employee_details WHERE employee_id = @EmployeeId";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@EmployeeId", id);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new Employee(
+                                reader["employee_id"].ToString(),
+                                reader["firstname"].ToString(),
+                                reader["lastname"].ToString(),
+                                Convert.ToInt32(reader["contact_number"]),
+                                reader["email"].ToString(),
+                                reader["address"].ToString()
+                            );
+                        }
+                        else
+                        {
+                            throw new Exception("Employee not found.");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+           
+        }
+
+        public void UpdateEmployeeDetails(Employee emp)
+        {
+            using (MySqlConnection conn = new MySqlConnection(DatabaseHelper.GetConnectionString()))
+            {
+                conn.Open();
+
+                string updateQuery = @" UPDATE employee_details SET firstname = @FirstName,lastname = @LastName,contact_number = @ContactNo,email = @Email, address = @Address WHERE employee_id = @EmployeeId";
+               MySqlCommand cmd = new MySqlCommand(updateQuery, conn);
+                cmd.Parameters.AddWithValue("@EmployeeId", emp.Id);
+                cmd.Parameters.AddWithValue("@FirstName", emp.FirstName);
+                cmd.Parameters.AddWithValue("@LastName", emp.LastName);
+                cmd.Parameters.AddWithValue("@ContactNo", emp.ContactNo);
+                cmd.Parameters.AddWithValue("@Email", emp.Email);
+                cmd.Parameters.AddWithValue("@Address", emp.Address);
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show($"Employee details of {emp.Id} updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
     }
 }
+        
+    
+
 
 

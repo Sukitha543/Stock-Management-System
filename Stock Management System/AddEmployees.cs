@@ -13,6 +13,7 @@ namespace Stock_Management_System
 {
     public partial class AddEmployees : Form
     {
+       
         public AddEmployees()
         {
             InitializeComponent();
@@ -60,7 +61,7 @@ namespace Stock_Management_System
             catch (FormatException)
             {
                 MessageBox.Show("Invalid Entry. Please check your inputs.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                ContactNumber.Text = string.Empty;
+                
             }
             catch (Exception ex)
             {
