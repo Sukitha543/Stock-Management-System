@@ -30,16 +30,16 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.LogOutBtn = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.DispatchStockBtn = new System.Windows.Forms.Button();
+            this.IssueStockBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.ViewStocksBtn = new System.Windows.Forms.Button();
             this.AddQuantityBtn = new System.Windows.Forms.Button();
             this.AddNewStockBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +73,16 @@
             this.LogOutBtn.UseVisualStyleBackColor = false;
             this.LogOutBtn.Click += new System.EventHandler(this.LogOutBtn_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Stock_Management_System.Properties.Resources.data_warehouse_5;
+            this.pictureBox2.Location = new System.Drawing.Point(97, 289);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(113, 65);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -103,18 +113,19 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Stock";
             // 
-            // DispatchStockBtn
+            // IssueStockBtn
             // 
-            this.DispatchStockBtn.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.DispatchStockBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DispatchStockBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DispatchStockBtn.ForeColor = System.Drawing.Color.White;
-            this.DispatchStockBtn.Location = new System.Drawing.Point(379, 284);
-            this.DispatchStockBtn.Name = "DispatchStockBtn";
-            this.DispatchStockBtn.Size = new System.Drawing.Size(271, 74);
-            this.DispatchStockBtn.TabIndex = 19;
-            this.DispatchStockBtn.Text = "Dispatch Stock";
-            this.DispatchStockBtn.UseVisualStyleBackColor = false;
+            this.IssueStockBtn.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.IssueStockBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.IssueStockBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IssueStockBtn.ForeColor = System.Drawing.Color.White;
+            this.IssueStockBtn.Location = new System.Drawing.Point(379, 284);
+            this.IssueStockBtn.Name = "IssueStockBtn";
+            this.IssueStockBtn.Size = new System.Drawing.Size(271, 74);
+            this.IssueStockBtn.TabIndex = 19;
+            this.IssueStockBtn.Text = "Issue Stock";
+            this.IssueStockBtn.UseVisualStyleBackColor = false;
+            this.IssueStockBtn.Click += new System.EventHandler(this.IssueStockBtn_Click);
             // 
             // label2
             // 
@@ -138,6 +149,7 @@
             this.ViewStocksBtn.TabIndex = 17;
             this.ViewStocksBtn.Text = "View Stocks";
             this.ViewStocksBtn.UseVisualStyleBackColor = false;
+            this.ViewStocksBtn.Click += new System.EventHandler(this.ViewStocksBtn_Click);
             // 
             // AddQuantityBtn
             // 
@@ -177,22 +189,12 @@
             this.label1.Text = "Dashboard";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Stock_Management_System.Properties.Resources.data_warehouse_5;
-            this.pictureBox2.Location = new System.Drawing.Point(97, 289);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(113, 65);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
-            // 
             // EmployeeDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 538);
-            this.Controls.Add(this.DispatchStockBtn);
+            this.Controls.Add(this.IssueStockBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ViewStocksBtn);
             this.Controls.Add(this.AddQuantityBtn);
@@ -218,7 +220,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button DispatchStockBtn;
+        private System.Windows.Forms.Button IssueStockBtn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button ViewStocksBtn;
         private System.Windows.Forms.Button AddQuantityBtn;

@@ -233,9 +233,45 @@ namespace Stock_Management_System
     
         
         
-        public void issueStocks(string id)
+        public void issueStocks(string id, int quantity)
         {
-            
+            using (MySqlConnection conn = new MySqlConnection(DatabaseHelper.GetConnectionString()))
+
+                try
+                {
+                    conn.Open();
+
+                    // Check if the stock exists
+                    string checkQuery = "SELECT quantity FROM stocks WHERE stock_id = @StockId";
+                    MySqlCommand checkCmd = new MySqlCommand(checkQuery, conn);
+                    checkCmd.Parameters.AddWithValue("@StockId", id);
+                    int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+                    if (count == 0)
+                    {
+                        throw new Exception("Stock ID not found.");
+                    }
+
+                    // Get the current quantity
+                    int currentQuantity = Convert.ToInt32(count);
+
+                    // Calculate the new quantity
+                    int updatedQuantity = currentQuantity - quantity;
+
+                    // Update the quantity in the database
+                    string updateQuery = "UPDATE stocks SET quantity = @UpdatedQuantity WHERE stock_id = @StockId";
+                    MySqlCommand updateCmd = new MySqlCommand(updateQuery, conn);
+                    updateCmd.Parameters.AddWithValue("@UpdatedQuantity", updatedQuantity);
+                    updateCmd.Parameters.AddWithValue("@StockId", id);
+
+                    updateCmd.ExecuteNonQuery();
+
+                    MessageBox.Show($"Stock issued successfully. New quantity: {updatedQuantity}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
         }
 
     }

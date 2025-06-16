@@ -43,5 +43,16 @@ namespace Stock_Management_System
             AddQuantity add = new AddQuantity();
             add.Show();
         }
+
+        private void ViewStocksBtn_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void IssueStockBtn_Click(object sender, EventArgs e)
+        {
+            IssueStocks issue = new IssueStocks();
+            issue.Show();
+        }
     }
 }

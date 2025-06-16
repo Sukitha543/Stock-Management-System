@@ -181,7 +181,7 @@ namespace Stock_Management_System
             return nextID;
         }
 
-        public override void delete(string id)
+        public void delete(string id)
         {
             using (MySqlConnection conn = new MySqlConnection(DatabaseHelper.GetConnectionString()))
             {
