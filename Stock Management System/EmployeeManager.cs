@@ -111,6 +111,85 @@ namespace Stock_Management_System
 
             }
         }
+
+
+        public void addNewStock(Stock stock)
+        {
+            using (MySqlConnection conn = new MySqlConnection(DatabaseHelper.GetConnectionString()))
+            {
+                conn.Open();
+
+                // Add employee details
+                string insertQuery = "INSERT INTO stocks (stock_id, name, quantity, supplier, contact, date) VALUES (@id, @name, @quantity, @supplier, @contact, @date)";
+                MySqlCommand insertCmd = new MySqlCommand(insertQuery, conn);
+                insertCmd.Parameters.AddWithValue("@id", stock.Id);
+                insertCmd.Parameters.AddWithValue("@name", stock.Name);
+                insertCmd.Parameters.AddWithValue("@quantity", stock.Quantity);
+                insertCmd.Parameters.AddWithValue("@supplier", stock.Supplier);
+                insertCmd.Parameters.AddWithValue("@contact", stock.Contact);
+                insertCmd.Parameters.AddWithValue("@date", stock.Date);
+
+                insertCmd.ExecuteNonQuery();
+
+                MessageBox.Show($"The New srock with the ID {stock.Id} was added successfully.", "New Stock Added", MessageBoxButtons.OK);
+            }
+        }
+        
+
+        public static List<string> GetSuppliers()
+        {
+            List<string> suppliers = new List<string>();
+
+            using (MySqlConnection conn = new MySqlConnection(DatabaseHelper.GetConnectionString()))
+            {
+                conn.Open();
+
+                string query = "SELECT supplier_name FROM suppliers";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        suppliers.Add(reader["supplier_name"].ToString());
+                    }
+                }
+            }
+
+            return suppliers;
+        }
+
+        public static string GetNextStockId()
+        {
+            string nextID = " ";
+
+            using (MySqlConnection conn = new MySqlConnection(DatabaseHelper.GetConnectionString()))
+            {
+                conn.Open();
+
+                string query = "SELECT stock_id FROM stocks ORDER BY stock_id DESC LIMIT 1";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                object result = cmd.ExecuteScalar();
+
+                if (result != null)
+                {
+                    string lastID = result.ToString();  
+
+                    int numericPart = int.Parse(lastID.Substring(1));
+
+                    int newNumericPart = numericPart + 1;
+
+                    nextID = "S" + newNumericPart.ToString("D3");
+                }
+                else
+                {
+                    nextID = "S001";
+                }
+            }
+            return nextID;
+        }
+        
+        
         public override void delete(string id)
         {
             

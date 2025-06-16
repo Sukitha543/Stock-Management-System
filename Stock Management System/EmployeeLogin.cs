@@ -54,7 +54,8 @@ namespace Stock_Management_System
                     EmployeeManager employeeLogin = new EmployeeManager(username, password);
                     employeeLogin.login(username, password);
 
-                    
+                    EmployeeDashboard employeeDashboard = new EmployeeDashboard();
+                    employeeDashboard.Show();
                     this.Hide();
                 }
 
