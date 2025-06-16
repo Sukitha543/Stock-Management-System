@@ -233,7 +233,7 @@ namespace Stock_Management_System
     
         
         
-        public override void delete(string id)
+        public void issueStocks(string id)
         {
             
         }
