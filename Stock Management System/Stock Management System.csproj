@@ -126,6 +126,12 @@
     <Compile Include="AddNewStock.Designer.cs">
       <DependentUpon>AddNewStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddQuantity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddQuantity.Designer.cs">
+      <DependentUpon>AddQuantity.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddNewStock.resx">
       <DependentUpon>AddNewStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddQuantity.resx">
+      <DependentUpon>AddQuantity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>

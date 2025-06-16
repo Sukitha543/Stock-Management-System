@@ -37,5 +37,11 @@ namespace Stock_Management_System
                 this.Show();
             }
         }
+
+        private void AddQuantityBtn_Click(object sender, EventArgs e)
+        {
+            AddQuantity add = new AddQuantity();
+            add.Show();
+        }
     }
 }

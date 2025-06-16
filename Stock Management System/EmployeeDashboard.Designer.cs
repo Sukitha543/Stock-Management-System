@@ -30,7 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.LogOutBtn = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,6 +39,7 @@
             this.AddQuantityBtn = new System.Windows.Forms.Button();
             this.AddNewStockBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -72,16 +72,6 @@
             this.LogOutBtn.Text = "Log Out";
             this.LogOutBtn.UseVisualStyleBackColor = false;
             this.LogOutBtn.Click += new System.EventHandler(this.LogOutBtn_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Stock_Management_System.Properties.Resources.data_warehouse_5;
-            this.pictureBox2.Location = new System.Drawing.Point(97, 289);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(113, 65);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
             // 
             // label5
             // 
@@ -161,6 +151,7 @@
             this.AddQuantityBtn.TabIndex = 16;
             this.AddQuantityBtn.Text = "Add Quantity";
             this.AddQuantityBtn.UseVisualStyleBackColor = false;
+            this.AddQuantityBtn.Click += new System.EventHandler(this.AddQuantityBtn_Click);
             // 
             // AddNewStockBtn
             // 
@@ -185,6 +176,16 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "Dashboard";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Stock_Management_System.Properties.Resources.data_warehouse_5;
+            this.pictureBox2.Location = new System.Drawing.Point(97, 289);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(113, 65);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
             // 
             // EmployeeDashboard
             // 
