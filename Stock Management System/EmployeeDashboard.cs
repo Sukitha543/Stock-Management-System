@@ -46,7 +46,8 @@ namespace Stock_Management_System
 
         private void ViewStocksBtn_Click(object sender, EventArgs e)
         {
-            
+            ViewStocks view = new ViewStocks();
+            view.Show();
         }
 
         private void IssueStockBtn_Click(object sender, EventArgs e)

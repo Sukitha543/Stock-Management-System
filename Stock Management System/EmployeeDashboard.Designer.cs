@@ -147,7 +147,7 @@
             this.ViewStocksBtn.Name = "ViewStocksBtn";
             this.ViewStocksBtn.Size = new System.Drawing.Size(271, 74);
             this.ViewStocksBtn.TabIndex = 17;
-            this.ViewStocksBtn.Text = "View Stocks";
+            this.ViewStocksBtn.Text = "Available Stocks";
             this.ViewStocksBtn.UseVisualStyleBackColor = false;
             this.ViewStocksBtn.Click += new System.EventHandler(this.ViewStocksBtn_Click);
             // 

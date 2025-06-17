@@ -207,6 +207,12 @@
     <Compile Include="ViewEmployees.Designer.cs">
       <DependentUpon>ViewEmployees.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewStocks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewStocks.Designer.cs">
+      <DependentUpon>ViewStocks.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddEmployees.resx">
       <DependentUpon>AddEmployees.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewEmployees.resx">
       <DependentUpon>ViewEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewStocks.resx">
+      <DependentUpon>ViewStocks.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

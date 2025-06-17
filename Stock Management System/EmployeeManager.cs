@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace Stock_Management_System
 
     internal class EmployeeManager : Person, Interface
     {
-        public EmployeeManager() 
+        public EmployeeManager()
         {
         }
 
@@ -134,7 +135,7 @@ namespace Stock_Management_System
                 MessageBox.Show($"The New srock with the ID {stock.Id} was added successfully.", "New Stock Added", MessageBoxButtons.OK);
             }
         }
-        
+
 
         public static List<string> GetSuppliers()
         {
@@ -173,7 +174,7 @@ namespace Stock_Management_System
 
                 if (result != null)
                 {
-                    string lastID = result.ToString();  
+                    string lastID = result.ToString();
 
                     int numericPart = int.Parse(lastID.Substring(1));
 
@@ -230,9 +231,9 @@ namespace Stock_Management_System
                     throw new Exception(ex.Message);
                 }
         }
-    
-        
-        
+
+
+
         public void issueStocks(string id, int quantity)
         {
             using (MySqlConnection conn = new MySqlConnection(DatabaseHelper.GetConnectionString()))
@@ -274,5 +275,26 @@ namespace Stock_Management_System
                 }
         }
 
-    }
+        
+        public static DataTable GetAllStocks()
+        {
+            DataTable dataTable = new DataTable();
+
+            using (MySqlConnection conn = new MySqlConnection(DatabaseHelper.GetConnectionString()))
+            {
+                conn.Open();
+                string query = "SELECT * FROM stocks";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dataTable); // Populate the DataTable with the data
+                    }
+                }
+            }
+
+            return dataTable;
+        }
+    } 
 }
