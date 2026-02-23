@@ -45,7 +45,10 @@ namespace Stock_Management_System
                 {
                     // Call the create method with parameters
                     employeeRegister.create(username, id, password);
+                    EmployeeLogin employeeLogin = new EmployeeLogin();
+                    employeeLogin.Show();
                     this.Hide();
+
 
 
                 }
