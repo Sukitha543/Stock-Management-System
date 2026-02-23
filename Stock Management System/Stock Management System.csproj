@@ -144,21 +144,21 @@
     <Compile Include="AdminLogin.Designer.cs">
       <DependentUpon>AdminLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminManager.cs" />
+    <Compile Include="models\AdminManager.cs" />
     <Compile Include="AdminRegister.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminRegister.Designer.cs">
       <DependentUpon>AdminRegister.cs</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseHelper.cs" />
+    <Compile Include="models\DatabaseHelper.cs" />
     <Compile Include="EditEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditEmployee.Designer.cs">
       <DependentUpon>EditEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="Employee.cs" />
+    <Compile Include="models\Employee.cs" />
     <Compile Include="EmployeeDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,7 +171,7 @@
     <Compile Include="EmployeeLogin.Designer.cs">
       <DependentUpon>EmployeeLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeManager.cs" />
+    <Compile Include="models\EmployeeManager.cs" />
     <Compile Include="EmployeeRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,14 +184,14 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interface.cs" />
+    <Compile Include="models\Interface.cs" />
     <Compile Include="IssueStocks.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="IssueStocks.Designer.cs">
       <DependentUpon>IssueStocks.cs</DependentUpon>
     </Compile>
-    <Compile Include="Person.cs" />
+    <Compile Include="models\Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RemoveEmployee.cs">
@@ -200,7 +200,7 @@
     <Compile Include="RemoveEmployee.Designer.cs">
       <DependentUpon>RemoveEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="Stock.cs" />
+    <Compile Include="models\Stock.cs" />
     <Compile Include="ViewEmployees.cs">
       <SubType>Form</SubType>
     </Compile>
